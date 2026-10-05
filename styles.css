@@ -1,0 +1,249 @@
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0d0b18;--paper:#f7f0e8;--ink:#27212c;--gold:#d8b477;--rose:#d99aa7;--white:#fff}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:#f8f4ef;font-family:Montserrat,Arial,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;background:radial-gradient(circle at 50% 15%,#302344 0,#171126 34%,#0d0b18 75%);z-index:-3}
+.stars{position:fixed;inset:0;opacity:.55;z-index:-2;background-image:radial-gradient(#fff 1px,transparent 1px),radial-gradient(#d8b477 1px,transparent 1px);background-size:85px 85px,130px 130px;background-position:10px 20px,50px 70px}
+.hearts{position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.25;background-image:radial-gradient(circle,#d99aa7 1px,transparent 2px);background-size:120px 120px}
+.hidden{display:none}
+.opening{min-height:100vh;display:grid;place-items:center;padding:24px}
+.opening-card{text-align:center;max-width:650px;padding:55px 28px;animation:fadeUp 1.4s ease both}
+.mini-heart{font-size:42px;color:var(--gold);margin-bottom:22px}
+.eyebrow{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:500}
+h1,h2{font-family:"Cormorant Garamond",serif;font-weight:500;line-height:.95}
+h1{font-size:clamp(62px,12vw,120px);margin:22px 0}
+h1 span,h2 em{color:var(--rose);font-style:italic}
+.opening-text{font-size:14px;line-height:2;color:#d8d1dc;font-weight:300;margin-bottom:35px}
+.main-btn{border:1px solid rgba(216,180,119,.7);background:rgba(255,255,255,.04);color:#fff;padding:15px 25px;border-radius:50px;font-family:Montserrat;letter-spacing:1px;cursor:pointer;transition:.3s}
+.main-btn:hover{background:rgba(216,180,119,.12);transform:translateY(-2px)}
+.main-btn span{color:var(--rose);margin-left:8px}
+.tiny{margin-top:18px;color:#777080;font-size:10px;letter-spacing:2px}
+.section{max-width:950px;margin:auto;padding:110px 24px}
+.hero{text-align:center;min-height:85vh;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.hero h2{font-size:clamp(55px,9vw,100px);margin:25px 0}
+.divider{color:var(--rose);font-size:25px}
+.lead{max-width:550px;color:#c8c0ce;line-height:1.9;font-size:15px;margin-top:25px}
+.letter{padding-top:30px}
+.paper{max-width:700px;margin:auto;background:var(--paper);color:var(--ink);padding:55px clamp(28px,7vw,75px);box-shadow:0 20px 70px #0008;transform:rotate(-.5deg)}
+.paper:before{content:"";display:block;width:60px;height:2px;background:#c58f97;margin-bottom:35px}
+.paper p{font-family:"Cormorant Garamond",serif;font-size:22px;line-height:1.65;margin-bottom:22px}
+.paper .script{font-size:32px;color:#a36c78}
+.paper strong{color:#a36c78}
+.signature{text-align:right!important;margin-top:35px}
+.signature span{font-family:Montserrat;font-size:11px;letter-spacing:2px;color:#8c7a80}
+.months{text-align:center}
+.months h2{font-size:70px;margin:20px 0 60px}
+.timeline{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;text-align:left}
+.timeline article{border:1px solid #ffffff14;padding:25px;background:#ffffff04;border-radius:5px;position:relative}
+.timeline span{font-family:"Cormorant Garamond";font-size:30px;color:var(--gold);float:right}
+.timeline h3{font-family:"Cormorant Garamond";font-size:28px;font-weight:500;margin-bottom:8px}
+.timeline p{font-size:12px;line-height:1.7;color:#aaa2b1;font-weight:300}
+.quote{text-align:center;padding:150px 24px}
+.quote-mark{font-family:serif;font-size:100px;color:var(--rose);height:70px}
+.quote h2{font-size:55px;margin:30px 0 5px}
+.quote p{font-family:"Cormorant Garamond";font-size:38px;color:var(--gold);font-style:italic}
+.infinity{font-size:35px;color:#777080;margin-top:30px}
+.video-section{text-align:center}
+.video-section h2{font-size:65px;margin:20px 0 45px}
+.video-frame{max-width:800px;margin:auto;background:#07060b;border:1px solid #ffffff18;box-shadow:0 20px 80px #0008;min-height:250px;position:relative;overflow:hidden}
+.video-frame video{width:100%;display:block;max-height:75vh}
+.video-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;background:linear-gradient(145deg,#171225,#0a0910);color:#aaa}
+.play-symbol{font-size:38px;color:var(--rose);margin-bottom:12px}
+.video-placeholder small{margin-top:8px;color:#6f6878}
+.final{text-align:center;padding-bottom:150px}
+.final-card{border:1px solid #ffffff18;padding:70px 30px;max-width:700px;margin:auto;background:#ffffff03}
+.final h2{font-size:75px;margin:25px 0 35px}
+.final-card>p:not(.eyebrow):not(.forever){font-family:"Cormorant Garamond";font-size:24px;line-height:1.6;color:#d5ced9;margin:20px auto;max-width:560px}
+.final-heart{font-size:55px;color:var(--rose);margin:30px}
+.forever{letter-spacing:5px;text-transform:uppercase;font-size:10px;color:var(--gold)}
+.music-btn{position:fixed;right:20px;top:20px;z-index:20;width:44px;height:44px;border-radius:50%;border:1px solid #ffffff25;background:#15101f;color:var(--gold);font-size:19px;cursor:pointer}
+
+/* ================================
+   SECCIÓN 10 MESES
+================================ */
+
+.gratitude-content {
+  max-width: 780px;
+  margin: auto;
+  text-align: center;
+}
+
+.gratitude-content h2 {
+  font-size: clamp(55px, 8vw, 88px);
+  margin: 25px 0 30px;
+}
+
+.gratitude-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  color: var(--rose);
+  font-size: 24px;
+  margin-bottom: 50px;
+}
+
+.gratitude-divider span {
+  width: 90px;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(216,180,119,.5)
+  );
+}
+
+.gratitude-divider span:last-child {
+  background: linear-gradient(
+    to left,
+    transparent,
+    rgba(216,180,119,.5)
+  );
+}
+
+.gratitude-text {
+  text-align: left;
+}
+
+.gratitude-text p {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 23px;
+  line-height: 1.7;
+  color: #d8d1dc;
+  margin-bottom: 27px;
+}
+
+.gratitude-text strong {
+  color: var(--rose);
+  font-weight: 600;
+}
+
+.highlight-text {
+  text-align: center;
+  font-size: 31px !important;
+  color: #f4e8df !important;
+  font-style: italic;
+  padding: 25px 15px;
+  margin: 40px 0 !important;
+}
+
+/* IMAGEN */
+
+.love-image {
+  margin: 65px auto 70px;
+  max-width: 620px;
+}
+
+.love-image img {
+  display: block;
+  width: 100%;
+  max-height: 650px;
+  object-fit: contain;
+  border: 1px solid rgba(216,180,119,.3);
+  padding: 10px;
+  background: rgba(255,255,255,.025);
+  box-shadow:
+    0 25px 80px rgba(0,0,0,.5),
+    0 0 40px rgba(216,180,119,.05);
+}
+
+.image-caption {
+  margin-top: 18px;
+  color: #82798a;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+  font-style: italic;
+}
+
+/* MENSAJE FINAL */
+
+.final-message {
+  max-width: 680px;
+  margin: auto;
+  text-align: center;
+}
+
+.final-message > p {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 24px;
+  line-height: 1.7;
+  color: #d8d1dc;
+  margin-bottom: 25px;
+}
+
+.final-message h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(40px, 6vw, 62px);
+  font-weight: 500;
+  color: var(--gold);
+  font-style: italic;
+  margin: 35px 0;
+}
+
+/* NUNCA MÁS SOLOS */
+
+.never-alone {
+  margin: 65px auto 0;
+  padding: 40px 20px;
+  border-top: 1px solid rgba(216,180,119,.18);
+  border-bottom: 1px solid rgba(216,180,119,.18);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.never-alone span {
+  font-family: "Cormorant Garamond", serif;
+  color: var(--rose);
+  font-size: 35px;
+}
+
+.never-alone strong {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 29px;
+  letter-spacing: 5px;
+  color: #f4e8df;
+  font-weight: 500;
+}
+
+.never-alone small {
+  font-size: 10px;
+  letter-spacing: 6px;
+  color: var(--gold);
+}
+
+/* CELULAR */
+
+@media (max-width: 650px) {
+
+  .gratitude-content h2 {
+    font-size: 52px;
+  }
+
+  .gratitude-text p {
+    font-size: 20px;
+    line-height: 1.65;
+  }
+
+  .highlight-text {
+    font-size: 27px !important;
+  }
+
+  .love-image {
+    margin-top: 45px;
+  }
+
+  .final-message > p {
+    font-size: 21px;
+  }
+
+  .never-alone strong {
+    font-size: 23px;
+    letter-spacing: 3px;
+  }
+
+}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:650px){.section{padding:80px 18px}.timeline{grid-template-columns:1fr}.months h2,.video-section h2{font-size:52px}.quote h2{font-size:44px}.final h2{font-size:58px}.paper{padding:38px 25px}.paper p{font-size:19px}.hero{min-height:80vh}}
